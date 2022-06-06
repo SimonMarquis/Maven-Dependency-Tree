@@ -119,6 +119,11 @@ androidx.core:core:1.8.0
 - 💀 Failed to resolve
 ```
 
+### Credits
+
+- [@martinbonnin](https://github.com/martinbonnin) for [Xoxo](https://github.com/martinbonnin/Xoxo) 
+  > A wrapper around org.w3c.dom with nicer Kotlin APIs.
+
 ### License
 
 ```
