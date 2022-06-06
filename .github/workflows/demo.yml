@@ -22,3 +22,9 @@ jobs:
       - name: androidx.core:core
         if: always()
         run: kotlin tree.main.kts androidx.core:core:1.8.0 --repository=https://dl.google.com/android/maven2 --repository=https://repo1.maven.org/maven2
+      - name: com.google.firebase:firebase-ads
+        if: always()
+        run: kotlin tree.main.kts com.google.firebase:firebase-ads:21.0.0 --repository=https://dl.google.com/android/maven2 --repository=https://repo1.maven.org/maven2
+      - name: commons-io:commons-io
+        if: always()
+        run: kotlin tree.main.kts commons-io:commons-io:2.11.0 --repository=https://repo1.maven.org/maven2
