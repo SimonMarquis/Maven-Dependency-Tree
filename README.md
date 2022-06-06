@@ -1,4 +1,4 @@
-# 🌲 Maven Dependency Tree
+# 🌲 Maven Dependency Tree [![Demo](https://github.com/SimonMarquis/Maven-Dependency-Tree/actions/workflows/demo.yml/badge.svg)](https://github.com/SimonMarquis/Maven-Dependency-Tree/actions/workflows/demo.yml)
 
 > Kotlin script to list transitive dependencies of a Maven artifact.
 
