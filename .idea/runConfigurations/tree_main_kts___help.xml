@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="tree.main.kts --help" type="KotlinStandaloneScriptRunConfigurationType">
+    <module name="Maven-Dependency-Tree" />
+    <option name="PROGRAM_PARAMETERS" value="-- --help" />
+    <shortenClasspath name="NONE" />
+    <option name="filePath" value="$PROJECT_DIR$/tree.main.kts" />
+    <method v="2" />
+  </configuration>
+</component>
