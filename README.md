@@ -16,7 +16,7 @@ Options:
     --help, -h          -> Usage info
     --quiet, -q [false] -> Hide debug message
     --no-legend [false] -> Hide the legend
-    --repository=<URL>  -> Maven repository (vararg) defaults to Central & Google
+    --repository=<URL>  -> Maven repository (vararg) defaults to Maven Central
 ```
 
 ### Simple dependency on Maven Central
