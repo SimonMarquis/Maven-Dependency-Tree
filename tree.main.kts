@@ -1,7 +1,7 @@
 #!/usr/bin/env kotlin
 
 @file:Repository("https://repo1.maven.org/maven2/")
-@file:DependsOn("net.mbonnin.xoxo:xoxo:0.2")
+@file:DependsOn("net.mbonnin.xoxo:xoxo:0.3")
 
 import xoxo.XmlDocument
 import xoxo.XmlElement
