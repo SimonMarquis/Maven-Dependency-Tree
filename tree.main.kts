@@ -158,7 +158,9 @@ class Printer(private val tree: Map<Artifact, List<Artifact>?>) {
         val childSeen by lazy { seen + artifact }
         val childIndent by lazy { indent + if (seen.isEmpty()) "" else if (isLast) "   " else "│  " }
         fun isLast(index: Int) = index == dependencies.lastIndex
-        dependencies.forEachIndexed { idx, dep -> printRecursive(dep, printed, childSeen, childIndent, isLast(idx)) }
+        dependencies.sortedBy(Artifact::toString).forEachIndexed { idx, dep ->
+            printRecursive(dep, printed, childSeen, childIndent, isLast(idx))
+        }
     }
 
     private fun legend() = """
