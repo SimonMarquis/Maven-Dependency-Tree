@@ -107,7 +107,7 @@ class Resolver(private val artifact: Artifact, private val repositories: List<UR
     }
 
     private fun XmlDocument.dependencies() = root
-        .namedOrNull("dependencies")?.walkElements().orEmpty()
+        .namedChildOrNull("dependencies")?.walkElements().orEmpty()
         .filter { it.name == "dependency" }
         .map { it.childElements.toArtifact(this) }
         .toList()
@@ -126,8 +126,8 @@ class Resolver(private val artifact: Artifact, private val repositories: List<UR
         }
 
     private fun XmlDocument.findProperty(name: String): String? = root
-        .namedOrNull("properties")
-        ?.namedOrNull(name)?.textContent
+        .namedChildOrNull("properties")
+        ?.namedChildOrNull(name)?.textContent
 
 }
 
@@ -229,8 +229,9 @@ object Cli {
 //endregion
 
 //region Extensions
-fun XmlElement.named(name: String) = walkElements().asIterable().named(name)
-fun XmlElement.namedOrNull(name: String) = walkElements().asIterable().namedOrNull(name)
-fun Iterable<XmlElement>.named(name: String) = first { it.name == name }
-fun Iterable<XmlElement>.namedOrNull(name: String) = firstOrNull { it.name == name }
+fun XmlElement.namedChild(name: String) = childElements.single(withName(name))
+fun XmlElement.namedChildOrNull(name: String) = childElements.singleOrNull(withName(name))
+fun Iterable<XmlElement>.named(name: String) = first(withName(name))
+fun Iterable<XmlElement>.namedOrNull(name: String) = firstOrNull(withName(name))
+fun withName(name: String): (XmlElement) -> Boolean = { it.name == name }
 //endregion
